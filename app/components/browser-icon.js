@@ -19,9 +19,11 @@
                     if (browserVersion.toLowerCase().indexOf('firefox ') > -1) {
                         return 'firefox';
                     }
-                    if (browserVersion.toLowerCase().indexOf('ie ') > -1) {
+                    if (browserVersion.toLowerCase().indexOf('ie ') > -1 || browserVersion.toLowerCase().indexOf('edge') > -1) {
                         return 'internet-explorer';
                     }
+
+                    console.log(browserVersion);
                 }
 
                 scope.browserName = getBrowserName();
