@@ -1,0 +1,9 @@
+.list-header-row,
+.list-body-row {
+    border-bottom: 1px solid lightgray;
+    padding: 10px;
+}
+.list-header-row p {
+    font-weight: 900;
+    text-transform: uppercase;
+}

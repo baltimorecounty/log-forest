@@ -1,0 +1,40 @@
+<div ng-controller="LogsCtrl as viewModel" ng-cloak>
+    <p>{{viewModel.message}}</p>
+    <div class="log-container">
+        <div class="row list-header-row">
+            <div class="col">
+                <p>Type</p>
+            </div>
+            <div class="col">
+                <p>AppName</p>
+            </div>
+            <div class="col">
+                <p>Message</p>
+            </div>
+            <div class="col">
+                <p>Date Created</p>
+            </div>
+            <div class="col">
+                <p>Browser</p>
+            </div>
+        </div>
+        <div class="row list-body-row {{log.type | colorStatus}}"
+            ng-repeat="log in viewModel.logs">
+            <div class="col">
+                {{log.type}}
+            </div>
+            <div class="col">
+                {{log.appName}}
+            </div>
+            <div class="col">
+                {{log.message}}
+            </div>
+            <div class="col">
+                {{log.dateCreated}}
+            </div>
+            <div class="col">
+                <browser-icon user-agent="log.browserData.userAgent" />
+            </div>
+        </div>
+    </div>
+</div>
