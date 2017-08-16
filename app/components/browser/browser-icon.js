@@ -1,8 +1,8 @@
 (function (app) {
 
-    app.directive('browserIcon', ['browserFilter', browserIcon]);
+    app.directive('browserIcon', ['browserService', browserIcon]);
 
-    function browserIcon(browserFilter) {
+    function browserIcon(browserService) {
         return {
             restrict: 'E',
             templateUrl: 'components/browser/browser-icon.html',
@@ -10,21 +10,7 @@
                 userAgent: '=userAgent'
             },
             link: function(scope, element, attrs) {
-                function getBrowserName() {
-                    var browserVersion = browserFilter(scope.userAgent);
-
-                    if (browserVersion.toLowerCase().indexOf('chrome ') > -1) {
-                        return 'chrome';
-                    }
-                    if (browserVersion.toLowerCase().indexOf('firefox ') > -1) {
-                        return 'firefox';
-                    }
-                    if (browserVersion.toLowerCase().indexOf('ie ') > -1 || browserVersion.toLowerCase().indexOf('edge') > -1) {
-                        return 'internet-explorer';
-                    }
-                }
-
-                scope.browserName = getBrowserName();
+                scope.browserIconClass = browserService.getBrowserIconFromUserAgent(scope.userAgent);
             }
         };
     }
