@@ -1,5 +1,4 @@
-<ul>
-    <li ng-repeat="var browser in browsers">
-        <span class="btn btn-default">{{browser.name}}</span>
-    </li>
-</ul>
+<div class="btn-group-sm" role="group" aria-label="Basic example">
+    <button ng-repeat="browser in browsers" type="button" class="btn btn-link">
+        <i class="fa {{browser.fontAwesomeIconClass}}" aria-hidden="true"></i> {{browser.name}}</button>
+</div>

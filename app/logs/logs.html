@@ -1,5 +1,8 @@
 <div ng-controller="LogsCtrl as viewModel" ng-cloak>
     <p>{{viewModel.message}}</p>
+    <div class="filter">
+        <browser-filter-buttons />
+    </div>
     <div class="log-container">
         <div class="row list-header-row">
             <div class="col">
