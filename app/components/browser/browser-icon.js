@@ -5,7 +5,7 @@
     function browserIcon(browserFilter) {
         return {
             restrict: 'E',
-            templateUrl: 'components/browser-icon.html',
+            templateUrl: 'components/browser/browser-icon.html',
             scope: {
                 userAgent: '=userAgent'
             },
@@ -22,8 +22,6 @@
                     if (browserVersion.toLowerCase().indexOf('ie ') > -1 || browserVersion.toLowerCase().indexOf('edge') > -1) {
                         return 'internet-explorer';
                     }
-
-                    console.log(browserVersion);
                 }
 
                 scope.browserName = getBrowserName();
