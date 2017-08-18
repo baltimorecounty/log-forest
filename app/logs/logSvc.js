@@ -1,15 +1,15 @@
 (function (app) {
 
-    app.factory('logService', ['$http', '$q', logService]);
+    app.factory('logService', ['$http', '$q', 'logConstants', logService]);
 
 
-    function logService($http, $q, logService) {
+    function logService($http, $q, constants) {
         return {
             get: get
         };
 
         function get() {
-            return $http.get('//localhost:8080/api/1.0.0/logs')
+            return $http.get(constants.apiRoot + '/logs')
                 .then(logServiceResponseData)
                 .catch(logServiceResponseError);
         }
