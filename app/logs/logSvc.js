@@ -9,7 +9,7 @@
         };
 
         function get() {
-            return $http.get('//localhost:8080/logs/20170815')
+            return $http.get('//localhost:8080/api/1.0.0/logs')
                 .then(logServiceResponseData)
                 .catch(logServiceResponseError);
         }
